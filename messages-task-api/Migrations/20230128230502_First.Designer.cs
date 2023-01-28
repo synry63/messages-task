@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using messages_task_api;
 
@@ -11,9 +12,11 @@ using messages_task_api;
 namespace messagestaskapi.Migrations
 {
     [DbContext(typeof(MessagesTaskContext))]
-    partial class MessagesTaskContextModelSnapshot : ModelSnapshot
+    [Migration("20230128230502_First")]
+    partial class First
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,19 +78,19 @@ namespace messagestaskapi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7bc69122-8413-42f9-b76e-5a9fd2e3dc10"),
+                            Id = new Guid("b4dfe286-3724-4a7f-a9b1-105c38c33e20"),
                             Body = "Hello Patrick how are you",
                             DateReceived = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SenderEmail = "toto@gmail.com",
-                            UserId = new Guid("61a82cff-06cd-4a34-b85f-12e2f68d68c0")
+                            UserId = new Guid("9c56cb08-8ac0-4682-9cc5-95eca841476c")
                         },
                         new
                         {
-                            Id = new Guid("b820fe5e-85b0-4528-b751-a2225319740d"),
+                            Id = new Guid("b0f4af03-a002-434f-b9ee-82f5a8ae9bc3"),
                             Body = "I hope you are fine",
                             DateReceived = new DateTime(2023, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SenderEmail = "toto@gmail.com",
-                            UserId = new Guid("61a82cff-06cd-4a34-b85f-12e2f68d68c0")
+                            UserId = new Guid("9c56cb08-8ac0-4682-9cc5-95eca841476c")
                         });
                 });
 
@@ -120,14 +123,14 @@ namespace messagestaskapi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("61a82cff-06cd-4a34-b85f-12e2f68d68c0"),
+                            Id = new Guid("9c56cb08-8ac0-4682-9cc5-95eca841476c"),
                             Email = "synry63@gmail.com",
                             PasswordHash = "C3TZb8Ef5NcKnL/1CmjTrvYsixij9REwLDVkoK2UvFs=",
                             PasswordSalt = "/DYD9vqoSbSJ9B9b8AoThQ=="
                         },
                         new
                         {
-                            Id = new Guid("266e155d-bed4-47e3-a52f-c21eaad773f3"),
+                            Id = new Guid("50960105-b80e-49b0-be10-e7ce36e67b8e"),
                             Email = "toto@gmail.com",
                             PasswordHash = "C3TZb8Ef5NcKnL/1CmjTrvYsixij9REwLDVkoK2UvFs=",
                             PasswordSalt = "/DYD9vqoSbSJ9B9b8AoThQ=="
@@ -145,18 +148,6 @@ namespace messagestaskapi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserNotifications");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("61a82cff-06cd-4a34-b85f-12e2f68d68c0"),
-                            Total = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("266e155d-bed4-47e3-a52f-c21eaad773f3"),
-                            Total = 0
-                        });
                 });
 
             modelBuilder.Entity("messages_task_api.Models.HistoryLog", b =>

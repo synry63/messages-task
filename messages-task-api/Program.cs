@@ -56,5 +56,14 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// lunch migration on startup
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<MessagesTaskContext>();
+    context.Database.Migrate();
+}
+
 app.MapHub<MessageHub>("/message-hub");
 app.Run();
