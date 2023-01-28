@@ -1,4 +1,4 @@
-# TaskManagement
+# messages-task
 
 
  appsettings.json --> just change the connection string to your SQL server database.
