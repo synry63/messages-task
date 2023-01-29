@@ -11,7 +11,7 @@
  
  That all.
  
- ## Project setup Vue
+ ## Project setup Vue (Nodejs required)
  
  npm install
  and
