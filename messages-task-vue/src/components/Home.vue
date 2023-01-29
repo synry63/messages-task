@@ -107,15 +107,13 @@
                 });
             },
             resultUsersAPI(data) {
-                console.log("eezrrezr");
+                console.log("result Users API");
                 data.forEach((obj) => {
                     this.users.push(new User(obj.id,obj.email));
                 });
                 
             },
             reloadMessages() {
-                var toto = "tata";
-                console.log(toto);
                 this.messages = [];
                 api_getMessages(this.$store.state.user, this.resultMessagesAPI);
             },

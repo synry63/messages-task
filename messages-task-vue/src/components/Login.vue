@@ -62,7 +62,7 @@
 
         },
         resultAPIpersist(user) {
-            console.log("zezz");
+            console.log("result API persist");
             if (user.email == undefined) {
                 this.errorText = user;
             }
