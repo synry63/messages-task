@@ -1,5 +1,14 @@
 # messages-task
 
+## Stack
+
+- VueJS 2
+- .NET 7
+- EFcore
+- SQL SERVER
+- SignalR
+- vue-test-utils + jestjs (unit-test)
+
 ## Project setup API
 
  appsettings.json --> just change the connection string to your SQL server database.
