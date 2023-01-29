@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "messages-task-vue", "messages-task\messages-task-vue.esproj", "{2A6783D0-7354-4718-B783-EFE51D84AE4E}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "messages-task-vue", "messages-task-vue\messages-task-vue.esproj", "{2A6783D0-7354-4718-B783-EFE51D84AE4E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "messages-task-api", "messages-task-api\messages-task-api.csproj", "{A9ACEA4F-56CC-434B-8B83-52309D0415A2}"
 EndProject
