@@ -7,12 +7,13 @@ namespace messages_task_api.Services
     public sealed class MessageService : IMessageService
     {
         private readonly MessagesTaskContext _context;
-        
+        private readonly IUserNotificationService _userNotificationService;
 
-        public MessageService(MessagesTaskContext context)
+
+        public MessageService(MessagesTaskContext context, IUserNotificationService userNotificationService)
         {
             _context = context;
-
+            _userNotificationService = userNotificationService;
         }
 
         public Guid AddMessage(PersistMessageResource mess)
@@ -27,6 +28,8 @@ namespace messages_task_api.Services
 
             _context.Messages.Add(message);
             _context.SaveChanges();
+
+            _userNotificationService.IncrementTotal(message.UserId);
 
             return message.Id;
         }

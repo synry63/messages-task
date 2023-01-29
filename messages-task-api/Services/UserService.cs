@@ -13,14 +13,16 @@ namespace messages_task_api.Services
     public sealed class UserService : IUserService
     {
         private readonly MessagesTaskContext _context;
+        private readonly IUserNotificationService _userNotificationService;
         private readonly string _pepper;
         private readonly int _iteration = 3;
 
 
-        public UserService(MessagesTaskContext context)
+        public UserService(MessagesTaskContext context, IUserNotificationService userNotificationService)
         {
             _context = context;
             _pepper = "ab$45";
+            _userNotificationService = userNotificationService;
         }
 
         public UserProfilResource Login(RegisterResource resource)
@@ -39,8 +41,13 @@ namespace messages_task_api.Services
                 {
                     return null;
                 }
+                var total = 0;
+                if (user.userNotification != null) //set notif to 0 as news messages will be display at login
+                {
+                    total = _userNotificationService.resetTotal(user.Id);
+                }
 
-                return new UserProfilResource(user.Id, user.Email, (user.userNotification!= null) ? user.userNotification.Total : 0);
+                return new UserProfilResource(user.Id, user.Email, total);
                 
                     
             }

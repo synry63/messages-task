@@ -21,12 +21,10 @@ namespace messages_task_api.Controllers
     public class MessagesController : ControllerBase
     {
         private readonly IMessageService _messageService;
-        private readonly IUserNotificationService _userNotificationService;
 
-        public MessagesController(IMessageService messageService, IUserNotificationService userNotificationService)
+        public MessagesController(IMessageService messageService)
         {
             _messageService = messageService;
-            _userNotificationService = userNotificationService;
         }
 
         // GET: api/Messages
@@ -44,7 +42,6 @@ namespace messages_task_api.Controllers
         public ActionResult<Message> PostMessage(PersistMessageResource ressource)
         {
             var response = _messageService.AddMessage(ressource);
-            _userNotificationService.IncrementTotal(ressource.UserId);
 
             return Ok(response);
         }
