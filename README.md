@@ -19,3 +19,7 @@
 
  ## UML
  ![UML!](UML.png)
+  ## Difficulties
+  
+  with unit test in Vue js and with authentication and security aspects (API)
+ 
