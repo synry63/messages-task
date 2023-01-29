@@ -4,7 +4,7 @@
          <div>
             <p><span>{{showLoginRegisterTextForm}}</span></p>
             <div>
-                <label for="email">Email:</label><input v-model="user.email" type="text" name="email" />
+                <label for="email">Email:</label><input @input="change" id="email-input" v-model="user.email" type="text" name="email" />
                 <label for="pass">Password:</label><input v-model="user.password" type="password" name="pass" />
                 <button v-if="isRegister" @click="login()"><span>Login</span></button>
                 <button v-else @click="register()"><span>Register</span></button>
@@ -39,6 +39,7 @@
             return {
                 user: null,
                 isRegister: true,
+                isValidEmail:false,
                 errorText:""
             }
     },
@@ -53,6 +54,12 @@
         },
         toogle() {
             this.isRegister = (this.isRegister) ? false : true;
+        },
+        change() {
+            var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+            var test = this.user.email.match(pattern);
+            (test != null) ? this.isValidEmail = true : this.isValidEmail = false
+
         },
         resultAPIpersist(user) {
             console.log("zezz");
