@@ -16,3 +16,6 @@
  npm install
  and
  npm run serve
+
+ ## UML
+ ![UML!](UML.png)
