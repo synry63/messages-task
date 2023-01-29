@@ -1,6 +1,6 @@
 # messages-task
 
-## Project setup
+## Project setup API
 
  appsettings.json --> just change the connection string to your SQL server database.
  
@@ -10,3 +10,9 @@
  The database will be created automatically. Then, lunch both application at startup.
  
  That all.
+ 
+ ## Project setup Vue
+ 
+ npm install
+ and
+ npm run serve
